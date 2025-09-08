@@ -1,8 +1,4 @@
-SELECT
-    full_name,
-    d.department_name,
-    e.end_date,
-    status
-FROM employees e
-JOIN departments d ON e.department_id = d.department_id
-WHERE e.status = 'Terminated' AND end_date <= '2022-12-31';
+SELECT full_name, department_name, end_date, status
+FROM employees
+JOIN departments ON employees.department_id = departments.department_id
+WHERE status = 'Terminated' AND end_date <= '2022-12-31';
